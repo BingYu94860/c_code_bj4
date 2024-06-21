@@ -1,0 +1,13 @@
+# Ignore all compiled .o file
+*.o
+
+# Ignore all compiled .d file
+*.d
+
+# Ignore all compiled .exe file
+*.exe
+
+# Ignore all compiled executables
+app
+./src/main.exe
+./src/build/*

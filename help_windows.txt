@@ -1,0 +1,10 @@
+
+1. Download (ex: 'llvm-mingw-20240619-ucrt-x86_64.zip')
+https://github.com/mstorsjo/llvm-mingw/releases
+
+2. Add "environment variables" or use the following cmd
+set path="%path%;C:\llvm-mingw-20240619-ucrt-x86_64\bin"
+
+3. Rename 'C:\llvm-mingw-20240619-ucrt-x86_64\bin\mingw32-make.exe' to 'C:\llvm-mingw-20240619-ucrt-x86_64\bin\make.exe'
+
+
