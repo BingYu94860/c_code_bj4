@@ -11,7 +11,8 @@
 			},
 			"linux": {
 				"command": "run.sh"
-			}
+			},
+			"problemMatcher": []
 		},
 		{
 			"label": "run clean",
@@ -21,7 +22,8 @@
 			},
 			"linux": {
 				"command": "make clean"
-			}
+			},
+			"problemMatcher": []
 		}
 	]
 }
