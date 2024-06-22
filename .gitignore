@@ -13,5 +13,4 @@ app
 ./src/build/*
 
 # Ignore folder
-./libstrophe/*
-
+libstrophe/
