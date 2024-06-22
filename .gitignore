@@ -4,6 +4,9 @@
 # Ignore all compiled .d file
 *.d
 
+# Ignore all compiled .a file
+*.a
+
 # Ignore all compiled .exe file
 *.exe
 

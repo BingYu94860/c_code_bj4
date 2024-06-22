@@ -22,8 +22,6 @@ rm -rf libstrophe/MIT-LICENSE.txt
 rm -rf libstrophe/GPL-LICENSE.txt
 rm -rf libstrophe/examples/README.md
 
-cd libstrophe/
-
 #----------#----------#----------#----------#----------#
 
 # sudo apt-get update
@@ -49,12 +47,11 @@ cd libstrophe/
 
 #----------#----------#----------#----------#----------#
 
+cd libstrophe/
 mkdir -p m4
 ACLOCAL_PATH=/usr/share/aclocal autoreconf -ivf
 ./configure
 make
+cd ..
 
 #----------#----------#----------#----------#----------#
-
-
-cd ..
