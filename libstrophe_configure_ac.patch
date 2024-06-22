@@ -1,0 +1,12 @@
+diff -u libstrophe/configure.ac libstrophe/configure.ac
+--- libstrophe/configure.ac	2023-09-02 15:43:05.546614587 +0800
++++ libstrophe_new/configure.ac	2023-09-02 15:14:17.489080173 +0800
+@@ -157,3 +157,7 @@
+ AC_SUBST(WARNING_FLAGS)
+ AC_CONFIG_FILES([Makefile libstrophe.pc])
+ AC_OUTPUT
++
++m4_pattern_allow([^AM_])
++m4_pattern_allow([^AC_])
++m4_pattern_allow([^AS_])
++

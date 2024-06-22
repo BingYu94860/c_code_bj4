@@ -11,3 +11,7 @@
 app
 ./src/main.exe
 ./src/build/*
+
+# Ignore folder
+./libstrophe/*
+
