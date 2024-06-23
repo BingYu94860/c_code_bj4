@@ -1,26 +1,25 @@
 wget https://github.com/strophe/libstrophe/releases/download/0.10.1/libstrophe-0.10.1.tar.gz
-
 tar zxvf libstrophe-0.10.1.tar.gz
-
 mv libstrophe-0.10.1 libstrophe
 
 #----------#----------#----------#----------#----------#
 
-patch -p0 < libstrophe_sha_h.patch
-patch -p0 < libstrophe_configure_ac.patch
+patch -p0 < patch/libstrophe_sha_h.patch
+patch -p0 < patch/libstrophe_configure_ac.patch
 
-rm -rf libstrophe-0.10.1.tar.gz
+rm -f libstrophe-0.10.1.tar.gz
+rm -f libstrophe/TODO
+rm -f libstrophe/NEWS
+rm -f libstrophe/README
+rm -f libstrophe/AUTHORS
+rm -f libstrophe/COPYING
+rm -f libstrophe/ChangeLog
+rm -f libstrophe/LICENSE.txt
+rm -f libstrophe/MIT-LICENSE.txt
+rm -f libstrophe/GPL-LICENSE.txt
+rm -f libstrophe/examples/README.md
+rm -f libstrophe/docs/footer.html
 rm -rf libstrophe/docs/
-rm -rf libstrophe/TODO
-rm -rf libstrophe/NEWS
-rm -rf libstrophe/README
-rm -rf libstrophe/AUTHORS
-rm -rf libstrophe/COPYING
-rm -rf libstrophe/ChangeLog
-rm -rf libstrophe/LICENSE.txt
-rm -rf libstrophe/MIT-LICENSE.txt
-rm -rf libstrophe/GPL-LICENSE.txt
-rm -rf libstrophe/examples/README.md
 
 #----------#----------#----------#----------#----------#
 
@@ -34,11 +33,12 @@ rm -rf libstrophe/examples/README.md
 ## autoreconf: error: libtoolize failed with exit status: 2
 # sudo apt-get install build-essential libtool
 
-## configure: error: openssl not found; openssl required
+## configure: error: openssl not found; openssl (3.0.11-r0) required
 # sudo apt-get install libssl-dev
 
-## configure: error: no XML parser was found, libstrophe requires expat or libxml2
+## configure: error: no XML parser was found, libstrophe requires expat (2.2.5-r0, 2.2.10-r0) or libxml2 (2.9.7-r0, 2.9.10-r0)
 ## https://github.com/libexpat/libexpat/releases
+## expat, libxml2, libroxml, ezxml
 # sudo apt-get install libxml2-dev
 
 ## ./configure: line 13635: syntax error near unexpected token `openssl,'

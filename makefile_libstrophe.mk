@@ -100,20 +100,21 @@ libstrophe:
 		wget https://github.com/strophe/libstrophe/releases/download/0.10.1/libstrophe-0.10.1.tar.gz ; \
 		tar zxvf libstrophe-0.10.1.tar.gz ; \
 		mv libstrophe-0.10.1 libstrophe ; \
-		patch -p0 < libstrophe_sha_h.patch ; \
-		patch -p0 < libstrophe_configure_ac.patch ; \
-		rm -rf libstrophe-0.10.1.tar.gz ; \
+		patch -p0 < patch/libstrophe_sha_h.patch ; \
+		patch -p0 < patch/libstrophe_configure_ac.patch ; \
+		rm -f libstrophe-0.10.1.tar.gz ; \
+		rm -f libstrophe/TODO ; \
+		rm -f libstrophe/NEWS ; \
+		rm -f libstrophe/README ; \
+		rm -f libstrophe/AUTHORS ; \
+		rm -f libstrophe/COPYING ; \
+		rm -f libstrophe/ChangeLog ; \
+		rm -f libstrophe/LICENSE.txt ; \
+		rm -f libstrophe/MIT-LICENSE.txt ; \
+		rm -f libstrophe/GPL-LICENSE.txt ; \
+		rm -f libstrophe/examples/README.md ; \
+		rm -f libstrophe/docs/footer.html ; \
 		rm -rf libstrophe/docs/ ; \
-		rm -rf libstrophe/TODO ; \
-		rm -rf libstrophe/NEWS ; \
-		rm -rf libstrophe/README ; \
-		rm -rf libstrophe/AUTHORS ; \
-		rm -rf libstrophe/COPYING ; \
-		rm -rf libstrophe/ChangeLog ; \
-		rm -rf libstrophe/LICENSE.txt ; \
-		rm -rf libstrophe/MIT-LICENSE.txt ; \
-		rm -rf libstrophe/GPL-LICENSE.txt ; \
-		rm -rf libstrophe/examples/README.md ; \
 	fi;
 
 configure: libstrophe

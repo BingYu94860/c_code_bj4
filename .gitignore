@@ -4,11 +4,17 @@
 # Ignore all compiled .d file
 *.d
 
+# Ignore all compiled .lo file
+*.lo
+
 # Ignore all compiled .a file
 *.a
 
 # Ignore all compiled .exe file
 *.exe
+
+# Ignore all compiled .tar.gz file
+*.tar.gz
 
 # Ignore all compiled executables
 app
@@ -17,3 +23,4 @@ app
 
 # Ignore folder
 libstrophe/
+libexpat/
