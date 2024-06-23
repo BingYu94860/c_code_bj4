@@ -2,11 +2,13 @@
 #----------#----------#----------#----------#----------#
 
 ifdef OS
+	MAKE=make
 	CC=gcc
 	AR=ar
 	RANLIB=ranlib
 	RM=del /Q
 else ifeq ($(shell uname), Linux)
+	MAKE=make
 	CC=gcc
 	AR=ar
 	RANLIB=ranlib

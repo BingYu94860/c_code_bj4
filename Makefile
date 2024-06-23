@@ -43,36 +43,62 @@ LIBS   +=$(APP_LIBS)
 
 #----------#----------#----------#----------#----------#
 
-all: build_libstrophe $(APP_EXEC)
+all: build_libexpat build_libstrophe $(APP_EXEC)
 	@echo "==========|$@ END|==========";
 .PHONY: all
 
-distclean: clean distclean_libstrophe
+distclean: clean distclean_libexpat distclean_libstrophe
+	rm -rf obj/
+	rm -rf lib/
 	@echo "==========|$@ END|==========";
 .PHONY: distclean
 
-clean: clean_libstrophe
-	$(RM) $(FIX_APP_EXEC) $(FIX_APP_OBJS) $(FIX_APP_DBJS)
+clean: clean_libexpat clean_libstrophe
+	$(RM) $(FIX_APP_EXEC)
+	$(RM) $(FIX_APP_OBJS)
+	$(RM) $(FIX_APP_DBJS)
 	@echo "==========|$@ END|==========";
 .PHONY: clean
 
 #----------#----------#----------#----------#----------#
 
+build_libexpat:
+	@echo "==========|$@|==========";
+	make -f makefile_libexpat.mk download
+	make -f makefile_libexpat.mk build_configure
+	@echo "==========|$@ END|==========";
+.PHONY: build_libexpat
+
+distclean_libexpat: clean_libexpat
+	@echo "==========|$@|==========";
+	make -f makefile_libexpat.mk distclean
+	@echo "==========|$@ END|==========";
+.PHONY: distclean_libexpat
+
+clean_libexpat:
+	@echo "==========|$@|==========";
+	make -f makefile_libexpat.mk clean_configure
+	@echo "==========|$@ END|==========";
+.PHONY: clean_libexpat
+
+#----------#----------#----------#----------#----------#
+
 build_libstrophe:
 	@echo "==========|$@|==========";
-	make -f makefile_libstrophe.mk
+	make -f makefile_libstrophe.mk download
+	make -f makefile_libstrophe.mk build_configure
 	@echo "==========|$@ END|==========";
 .PHONY: build_libstrophe
 
 distclean_libstrophe: clean_libstrophe
 	@echo "==========|$@|==========";
-	make distclean -f makefile_libstrophe.mk
+	make -f makefile_libstrophe.mk distclean
 	@echo "==========|$@ END|==========";
 .PHONY: distclean_libstrophe
 
 clean_libstrophe:
 	@echo "==========|$@|==========";
-	make clean -f makefile_libstrophe.mk
+	make -f makefile_libstrophe.mk clean_configure
 	@echo "==========|$@ END|==========";
 .PHONY: clean_libstrophe
 
