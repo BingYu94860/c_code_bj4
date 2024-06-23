@@ -22,7 +22,8 @@ app
 ./src/build/*
 
 # Ignore folder
-libstrophe/
-libexpat/
 obj/
 lib/
+libexpat/
+libopenssl/
+libstrophe/

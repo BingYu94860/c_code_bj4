@@ -33,12 +33,14 @@ rm -rf libstrophe/docs/
 ## autoreconf: error: libtoolize failed with exit status: 2
 # sudo apt-get install build-essential libtool
 
-## configure: error: openssl not found; openssl (3.0.11-r0) required
+## configure: error: openssl not found; openssl (3.0.11) required
+## https://github.com/openssl/openssl/releases
 # sudo apt-get install libssl-dev
 
-## configure: error: no XML parser was found, libstrophe requires expat (2.2.5-r0, 2.2.10-r0) or libxml2 (2.9.7-r0, 2.9.10-r0)
+## configure: error: no XML parser was found, libstrophe requires expat (2.2.10) or libxml2 (2.9.10)
 ## https://github.com/libexpat/libexpat/releases
 ## expat, libxml2, libroxml, ezxml
+# sudo apt-get install expat
 # sudo apt-get install libxml2-dev
 
 ## ./configure: line 13635: syntax error near unexpected token `openssl,'
@@ -51,7 +53,7 @@ cd libstrophe/
 mkdir -p m4
 ACLOCAL_PATH=/usr/share/aclocal autoreconf -ivf
 ./configure
-make
+make -j4
 cd ..
 
 #----------#----------#----------#----------#----------#

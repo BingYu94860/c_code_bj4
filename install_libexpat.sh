@@ -17,7 +17,7 @@ cd libexpat/
 mkdir -p m4
 ACLOCAL_PATH=/usr/share/aclocal autoreconf -ivf
 ./configure
-make
+make -j4
 cd ..
 
 #----------#----------#----------#----------#----------#

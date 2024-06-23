@@ -166,7 +166,7 @@ configure: download
 
 build_configure: configure
 	@if [ -e $(libstrophe_DIR)/Makefile ]; then \
-		cd $(libstrophe_DIR); make ; \
+		cd $(libstrophe_DIR); make -j4 ; \
 	fi;
 	@echo "==========|$@ END|==========";
 .PHONY: build_configure

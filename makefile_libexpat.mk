@@ -112,7 +112,7 @@ configure: download
 
 build_configure: configure
 	@if [ -e $(libexpat_DIR)/Makefile ]; then \
-		cd $(libexpat_DIR); make ; \
+		cd $(libexpat_DIR); make -j4 ; \
 	fi;
 	@echo "==========|$@ END|==========";
 .PHONY: build_configure
